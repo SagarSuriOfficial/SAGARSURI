@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+   <h2>What can Javascript do?</h2>
+   <p>Javascript can change HTML Attribute Values.</p>
+   <p>In this case Javascript changes the value of the arc (source) attribute of an image.</p>
+
+
+   <button onclick="document.getElementById('myImage').src='./Assets/bulb-on.png'"> Turn On Light</button>
+
+   <img src="./Assets/constant.jpg" id="myImage" style="width: 100px;" alt="constant-img">
+
+   <button onclick="document.getElementById('myImage').src = './Assets/bulb-of.png'">Turn Off Light</button>
+
+</body>
+</html>
