@@ -1,7 +1,9 @@
 
 ### in the third video learn about regEx , Explore about below link.
 
-```` https://regexr.com ```
+```
+https://regexr.com
+```
 
 #### [Practical Project](https://github.com/SagrSuri/webDevelopmentPW/tree/main/Module41-HOF%26FunctionalProgramming) <br> <br>
 
