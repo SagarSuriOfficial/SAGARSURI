@@ -11,6 +11,7 @@ class Product{
     }
 }
 
-const p = new Product();
+const p = new Product(); //new -> creates an empty plain object
+// in above peace of code we are calling the constructor method
 console.log(p);
 p.display();
