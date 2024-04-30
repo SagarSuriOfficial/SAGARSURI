@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=32&id=BQlLHKSAC1Yu&format=png" type="image/x-icon">
+    <title>UI/UX | Contact-Us</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <script src="https://kit.fontawesome.com/b08b6de27e.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    /* background-image: url('https://images.pexels.com/photos/735277/pexels-photo-735277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+    background-repeat: no repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#section-wrapper {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.box-wrapper {
+    position: relative;
+    display: table;
+    width: 88vw;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 30px;
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.4));
+}
+
+.box-wrapper:hover {
+    transition: 0.25s;
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.7));
+}
+
+.info-wrap {
+    width: 35%;
+    height: 90vh;
+    padding: 40px;
+    float: left;
+    display: block;
+    border-radius: 30px 0px 0px 30px;
+    background: linear-gradient(144deg, rgba(126, 39, 156, 0.9) 0%, rgba(49, 39, 157, 0.9) 49%);
+    color: #fff;
+}
+
+.info-title {
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 2px 2px black;
+}
+
+.info-sub-title {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 17px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.info-details {
+    list-style: none;
+    margin: 60px 0px;
+}
+
+.info-details li {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+}
+
+.info-details li i {
+    background: #49025f;
+    padding: 9px;
+    border-radius: 50%;
+    font-size: 14px;
+    margin-right: 5px;
+    text-shadow: 1px 2px 2px black;
+    box-shadow: 1px 1px 2px black;
+}
+
+.info-details li a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all .4s;
+}
+
+.info-details li a:hover {
+    color: #f44770;
+}
+
+.social-icons {
+    list-style: none;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons li i {
+    background: #49025f;
+    color: #fff;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 22%;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 2px black;
+}
+
+.social-icons li i:hover {
+    background: #fff;
+    color: #49025f;
+}
+
+.form-wrap {
+    width: 65%;
+    height: 90vh;
+    float: right;
+    padding: 40px 25px 35px 25px;
+    border-radius: 0px 30px 30px 0px;
+    background: #fffdf8;
+}
+
+.form-title {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    text-align: center;
+    margin-left: 23px;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px black, 1px 1px 2px white;
+}
+
+.form-fields {
+    display: table;
+    width: 100%;
+    padding: 15px 5px 5px 5px;
+}
+
+.form-fields input,
+.form-fields textarea {
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 12px;
+    color: #00031b;
+    padding: 20px 10px 20px 5px;
+    width: 100%;
+}
+
+.form-fields textarea {
+    height: 150px;
+    resize: none;
+}
+
+.form-group {
+    width: 46%;
+    float: left;
+    padding: 0px 30px;
+    margin: 14px 12px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+.form-fields .form-group:last-child {
+    width: 96%;
+}
+
+.submit-button {
+    width: 96%;
+    height: 9vh;
+    margin: 2px 12px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 1px 2px 2px black;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    background: #49025fdf;
+    box-shadow: 2px 3px 8px #7d7a7a, -3px -3px 8px white;
+    transition: transform 0.5s;
+}
+
+.submit-button:hover {
+    background: #31279de0;
+    transform: scale(0.98);
+}
+
+/* Responsive css */
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    .box-wrapper {
+        width: 85%;
+    }
+
+    .info-wrap {
+        width: 40%;
+        padding: 16px;
+    }
+
+    .form-wrap {
+        width: 60%;
+    }
+
+    .form-group {
+        padding-left: 15px;
+        margin-left: 0px;
+    }
+
+    .submit-button {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .box-wrapper {
+        width: 90%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        top: 0;
+    }
+
+    .info-wrap {
+        width: 100%;
+        height: 40%;
+        float: none;
+    }
+
+    .form-wrap {
+        width: 100%;
+        height: 60%;
+        float: none;
+    }
+
+    .info-wrap {
+        border-radius: 30px 30px 0px 0px;
+    }
+
+    .form-wrap {
+        border-radius: 0px 0px 30px 30px;
+    }
+
+    .form-group {
+        width: 100%;
+        float: none;
+        margin: 25px 0px;
+    }
+
+    .form-fields .form-group:last-child,
+    .submit-button {
+        width: 100%;
+    }
+
+    .submit-button {
+        margin: 10px 0px;
+    }
+}
+/* #msg{
+    color: #61b752;
+    margin-top: -20px;
+    display: block;
+} */
+
+::placeholder {
+    color: #000000a0;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+    </style>
+</head>
+
+<body>
+
+    <section id="section-wrapper">
+
+        <div class="box-wrapper">
+            <div class="info-wrap">
+                <h2 class="info-title">Contact Information</h2>
+                
+                <ul class="info-details">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>Mobile No. :</span>
+                        <a href="https://wa.me/918446262100" target="_blank"> +91 844-6262-100</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Email:</span>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagrsuri@gmail.com" target="_blank"> SAGRSURI@GMAIL.COM</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <span>Website:</span>
+                        <a href="https://www.sagarsuri.in/" target="_blank"> SAGARSURI.IN</a>
+                    </li>
+                </ul>
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/sagarsuriofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/c/PREMIUMGYAN/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.github.com/SAGRSURI" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com/sagarsuri_in/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-wrap">
+                <form name="submit-to-google-sheet" autocomplete="off" onsubmit="return validateEmail()">
+                    <div>
+                        <h2 class="form-title">Send us a message :)</h2>
+                    </div> 
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <input id=cform type="text" class="fname" name="FirstName" placeholder="First Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input id=cform type="text" class="fname" name="LastName" placeholder="Last Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="Mobile" pattern="[0-9]{10}" name="Mobile" placeholder="Mobile No." required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="email" name="Email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="Message" placeholder="Your Message" required></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="submit-button" id="msg" >Send Message</button>
+                    </div>
+                    <audio id="clickSound">
+                        <source src="./Assets/Submit.mp3" type="audio/mpeg">
+                        <!-- Add fallback for other formats if necessary -->
+                        <!-- Your browser does not support the audio element. -->
+                    </audio>
+                </form>
+            </div>
+        </div>
+    </section>
+      
+ <script>
+    
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzDgTtdkxC9Kmu3B6g9Svlc4C9d_3U_rUt-qC4ri6UjfUar59vd0bDkFJMmHUoq036IXQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+                msg.innerHTML = "Send Successfully"
+                msg.style.background = "#61b752";
+                submitButton();
+                setTimeout(function(){
+                    msg.innerHTML = "Send New Messege"
+                    msg.style.background = "#49025f";
+                },2000)
+                form.reset()
+            })
+      .catch(error => console.error('Error!', error.message))
+  })
+
+ </script>
+ <script>
+    function submitButton(){
+        let clickSound = document.getElementById("clickSound");
+        if (clickSound.paused) {
+                clickSound.play();
+            } else {
+                clickSound.currentTime = 0;
+            }
+    }
+ </script>
+
+ <!-- -----------------for Email validation----------------- -->
+ <script>
+    function validateEmail() {
+        var emailInput = document.getElementById('email').value;
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (regex.test(emailInput)) {
+            return true; // Email is valid
+        } else {
+            alert("Please enter a valid email address.");
+            return false; // Prevent form submission
+        }
+    }
+</script>
+</body>
+
+</html>
