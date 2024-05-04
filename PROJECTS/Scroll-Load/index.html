@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <link rel="stylesheet" href="./style.css">
+   
+</head>
+<body>
+
+   <!----- Preloader Section ----->
+   <div class="loader" id="loading">
+     <div class="ring"></div>
+     <div class="ring"></div>
+     <div class="ring"></div>
+     <span class="loading">LOADING...</span>
+   </div>
+
+   <script>
+   // JavaScript to hide the preloader after a delay
+setTimeout(function() {
+    var preloader = document.getElementById('loading');
+    preloader.style.opacity = '0'; // Set opacity to 0 to initiate the transition
+    preloader.addEventListener('transitionend', function() {
+        preloader.style.display = 'none'; // Hide the loader after the transition
+    });
+}, 1000); // 3000 milliseconds = 3 seconds delay
+
+   </script>
+   
+</body>
+</html>

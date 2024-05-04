@@ -3,19 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>BULB</title>
+    <style>
+        .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+        }
+        img{
+            width: 20rem;
+            transition: 0.5s;
+        }
+        img:hover{
+            width: 20rem;
+            transform: scale(1.2);
+        }
+        button{
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 2rem;
+            box-shadow: 0.1rem 0rem 0.3rem 0rem black;
+            transition: 0.3s;
+        }
+        button:hover{
+            transform: scale(0.9);
+            background: #fff6d6;
+        }
+        .bulb-button{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-   <h2>What can Javascript do?</h2>
-   <p>Javascript can change HTML Attribute Values.</p>
-   <p>In this case Javascript changes the value of the arc (source) attribute of an image.</p>
+    <div class="img"><img id="bulb-img" src="./OFF.png" alt="BULB"></div>
 
-
-   <button onclick="document.getElementById('myImage').src='./Assets/bulb-on.png'"> Turn On Light</button>
-
-   <img src="./Assets/constant.jpg" id="myImage" style="width: 100px;" alt="constant-img">
-
-   <button onclick="document.getElementById('myImage').src = './Assets/bulb-of.png'">Turn Off Light</button>
-
+    <div class="bulb-button">
+        <button onclick="document.getElementById('bulb-img').src = './OFF.png' ">OFF</button>
+        <button onclick="document.getElementById('bulb-img').src = './ON.png' ">ON</button>
+    </div>
+    
 </body>
 </html>
