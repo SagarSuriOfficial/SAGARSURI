@@ -1,0 +1,20 @@
+{
+  "name": "test-website",
+  "version": "1.1.1",
+  "description": "this is working project for portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Sagar Suri",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "react-script": "^2.0.5"
+  }
+}
