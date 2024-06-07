@@ -3,7 +3,7 @@
     margin: 0;
 }
 body{
-    background-image: url('/bg4.jpg');
+    background-image: url('./bg2.jpg');
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
