@@ -1,0 +1,16 @@
+::-webkit-scrollbar {width:0.5rem}
+::-webkit-scrollbar-track {background:#31ffe4}
+::-webkit-scrollbar-thumb {background:#6e00f5}
+::-webkit-scrollbar-thumb:hover {background:#58007e}
+
+/* Root properties */
+:root {
+    --bg-color: #ede7eb; /* Gray background color */
+    --text-color: #FFFF00; /* Yellow text color */
+}
+
+/* Apply background and text color to body */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
