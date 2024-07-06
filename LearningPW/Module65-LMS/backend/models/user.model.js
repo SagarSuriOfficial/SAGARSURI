@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
 import JWT from 'jsonwebtoken'
+import crypto from 'crypto'
 
 const emailRegex =
   /^(?=.{1,254}$)(?=.{1,64}@.{1,255}$)(?=[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(?=^.{1,}@.{1,}$)(?=\S)(?=[a-zA-Z0-9._%+-]{1,64})[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -8,7 +9,7 @@ const emailRegex =
 const userSchema = new Schema(
   {
     fullName: {
-      type: "String",
+      type: String,
       require: [true, "Name is Required"],
       minLength: [3, "Name atlist 3 caracter"],
       maxLength: [25, "Name should be less than 25 caracters."],
@@ -16,7 +17,7 @@ const userSchema = new Schema(
       trim: true,
     },
     email: {
-      type: "String",
+      type: String,
       require: [true, "Email Required"],
       lowercase: true,
       trim: true,
@@ -24,7 +25,7 @@ const userSchema = new Schema(
       match: [emailRegex, "Please Fill Valid Email Address"],
     },
     password: {
-      type: "String",
+      type: String,
       require: [true, "Password Require"],
       minLength: [6, "Password atlist 6 Caracters"],
       select: false,
@@ -69,9 +70,17 @@ userSchema.methods = {
     },
     comparePassword: async function(plainTextPassword){
       return await bcrypt.compare(plainTextPassword, this.password)
+    },
+    generatePasswordResetToken:async function() {
+      const resetToken = crypto.randomBytes(20).toString('hex');
+
+      this.forgotPasswordToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+      this.forgotPasswordExpiry = Date.now() + 15 * 60 * 1000; // 15 min from now
+
+      return resetToken;
     }
 }
 
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 
 export default User;

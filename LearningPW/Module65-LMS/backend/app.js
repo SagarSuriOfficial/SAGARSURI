@@ -18,7 +18,7 @@ app.use(cookieParser())
 app.use(morgan('dev'))
 
 app.use('/ping', (req, res)=>{
-    res.send('/pong')
+    res.send('Backend SERVER')
 })
 
 app.use('/api/v1/user', userRouter)
