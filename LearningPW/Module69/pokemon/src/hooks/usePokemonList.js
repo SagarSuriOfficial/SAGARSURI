@@ -54,8 +54,8 @@ function usePokemonList(){
       }
 
       useEffect(()=>{
-        
-      }[])
+        downloadPokemons();
+      }, [pokemonListState.pokedexUrl])
 }
 
 export default usePokemonList;
