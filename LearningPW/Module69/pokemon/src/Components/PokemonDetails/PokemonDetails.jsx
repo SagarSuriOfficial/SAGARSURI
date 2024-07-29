@@ -1,37 +1,36 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./PokemonDetails.css"
+import usePokemonList from "../../hooks/usePokemonList";
+import usePokemonDetails from "../../hooks/usePokemonDetails";
 
-function PokemonDetails(){
-    const {id} = useParams();
-    const [pokemon , setPokemon] = useState({})
-     async function dawnloadPokemon(){
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        setPokemon({
-            name: response.data.name,
-            image: response.data.sprites.other.dream_world.front_default,
-            weight: response.data.weight,
-            height: response.data.height,
-            types: response.data.types.map((t)=>t.type.name)
-        })
-     }
+function PokemonDetails() {
+  const { id } = useParams();
+  const [pokemon, pokemonListState] = usePokemonDetails(id)
+  return (
+    <div className="pokemon-details-wrapper">
+      <img className="pokemon-image" src={pokemon.image} />
+      <div className="pokemon-name"> {pokemon.name}</div>
+      <div className="pokemon-name" > <span>height:</span> {pokemon.height}</div>
+      <div className="pokemon-name"><span>weight:</span> {pokemon.weight}</div>
+      <div className="pokemon-details-types">
+        {pokemon.types && pokemon.types.map((t) => <div key={t}> {t} </div>)}
+      </div>
 
+      {
+        pokemon.types && pokemonListState.pokemonList &&
+        <div>
+          more {pokemon.types[0]} type of Pokemons
 
-     useEffect(()=>{
-        dawnloadPokemon()
-     }, [])
-    return(
-        <div className="pokemon-details-wrapper">
-          <img className="pokemon-image" src={pokemon.image} />
-          <div className="pokemon-name"> {pokemon.name}</div>
-          <div className="pokemon-name" > <span>height:</span> {pokemon.height}</div>
-          <div className="pokemon-name"><span>weight:</span> {pokemon.weight}</div>
-          <div className="pokemon-details-types">
-            { pokemon.types && pokemon.types.map((t) => <div key={t}> {t} </div> )}
-          </div>
+          <ul>
+            { pokemonListState.pokemonList.map((p)=> <li key={}>{}</li> )}
+          </ul>
         </div>
-    )
+      }
+     
+    </div>
+  )
 }
 
 export default PokemonDetails;
